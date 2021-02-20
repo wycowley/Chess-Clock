@@ -1,7 +1,6 @@
 body{
     margin: 0;
-    font-family: 'Raleway', sans-serif;
-}
+    font-family: 'PT Sans', sans-serif;}
 h1{
     margin: 0;
 }
@@ -14,6 +13,9 @@ input{
     width: 25vw;
     position: relative;
     top: -2px;
+}
+button{
+    padding: 0px;
 }
 #complete-viewport{
     display: none;
@@ -101,12 +103,10 @@ input{
     width: 100vw;
 }
 #black{
-    background-color: black;
     transform:rotate(180deg)
 
 }
 #white{
-    background-color: white;
 }
 #middleBox{
     position: fixed;
@@ -127,11 +127,12 @@ input{
     background-color: rgb(240,240,240);
 }
 .rounded-corners{
-    border-radius: 5%;
+    border-radius: 20px;
+    outline: none;
+    border: rgb(220,220,220);
 }
 .almost-max-width{
-    width: 95%;
-    margin-left: 2.5%;
+    width: 13vw;
 }
 .close-max-width{
     width: 90%;
@@ -139,4 +140,45 @@ input{
 }
 .full-width{
     width: 100vw;
+}
+.turnGreen{
+    animation: turnGreen .5s;
+    background-color: green;
+}
+.turnRed{
+    animation: turnRed .5s;
+    background-color: red;
+}
+.highlight{
+    animation: highlight 2s;
+}
+@keyframes turnGreen{
+    from{
+        background-color: inherit;
+    }
+    to{
+        background-color: green;
+    }
+}
+@keyframes turnRed{
+    from{
+        background-color: inherit;
+    }
+    to{
+        background-color: red;
+    }
+}
+@keyframes highlight{
+    0%{
+        background-color: rgb(240,240,240);
+    }
+    25%{
+        background-color: rgb(255, 197, 197);
+    }
+    75%{
+        background-color: rgb(255, 197, 197);
+    }
+    100%{
+        background-color: rgb(240,240,240);
+    }
 }

@@ -7,16 +7,32 @@ var increment = 0
 var stoppingVar
 function start(){
     paused = true;
-    console.log("hi");
     document.getElementById("complete-viewport").style.display = "inline";
     document.getElementById("set-up-screen").style.display = "none";
 
-    document.getElementById("black").style.backgroundColor = "black"
-    document.getElementById("white").style.backgroundColor = "white"
 
     console.log(document.getElementById("minutesTime").value)
-    startTime = parseInt(document.getElementById("minutesTime").value) * 60 + parseInt(document.getElementById("secondsTime").value)
-    increment = parseInt(document.getElementById("secondsIncrement").value);
+
+    var minutes = parseInt(document.getElementById("minutesTime").value)
+    var seconds = parseInt(document.getElementById("secondsTime").value)
+    var incrementValue = parseInt(document.getElementById("secondsIncrement").value)
+
+    // checks if anything is actually entered, and if not gives a default value
+    if(Number.isNaN(minutes)){
+        minutes = 0
+    }
+    if(Number.isNaN(seconds)){
+        seconds = 0
+    }
+    if(Number.isNaN(incrementValue)){
+        console.log("Yes, it is not a numbers")
+        incrementValue = 0;
+    }
+    startTime = minutes * 60 + seconds
+    if(startTime==0){
+        startTime = 600;
+    }
+    increment = incrementValue;
     
     turn = "white"
     whiteTime = startTime
@@ -24,7 +40,7 @@ function start(){
     renderTime()
     stoppingVar = setInterval(decreaseTime,100);
     document.getElementById("pauseContainer").style.display = "inline";
-    document.getElementById("pauseButton").src = "Images/play.png";
+    document.getElementById("pauseButton").src = "Images/play.svg";
 
 
 }
@@ -32,16 +48,22 @@ function stop(){
     document.getElementById("complete-viewport").style.display = "none";
     document.getElementById("set-up-screen").style.display = "inline";
     clearInterval(stoppingVar);
+    document.getElementById("black").className = document.getElementById("black").className.replace("turnRed", " ");
+    document.getElementById("black").className = document.getElementById("black").className.replace("turnGreen", " ");
+    document.getElementById("white").className = document.getElementById("white").className.replace("turnRed", " ");
+    document.getElementById("white").className = document.getElementById("white").className.replace("turnGreen", " ");
+
+    document.getElementById("stopButton").style.marginLeft = "5vw";
 
 }
 function pause(){
     if(paused == false){
         paused = true;
-        document.getElementById("pauseButton").src = "Images/play.png";
+        document.getElementById("pauseButton").src = "Images/play.svg";
     }
     else{
         paused = false;
-        document.getElementById("pauseButton").src = "Images/pause.png";
+        document.getElementById("pauseButton").src = "Images/pause.svg";
 
     }
 }
@@ -98,31 +120,42 @@ function renderTime(){
     if(Math.round(blackTime*10)/10==0){
         paused = true;
         document.getElementById("pauseContainer").style.display = "none";
+        document.getElementById("black").className = document.getElementById("black").className + " turnRed"
+        document.getElementById("white").className = document.getElementById("white").className + " turnGreen"
 
-        document.getElementById("black").style.backgroundColor = "red"
-        document.getElementById("white").style.backgroundColor = "green"
+        document.getElementById("stopButton").style.marginLeft = "40vw";
     }
     if(Math.round(whiteTime*10)/10==0){
         paused = true;
         document.getElementById("pauseContainer").style.display = "none";
-        document.getElementById("black").style.backgroundColor = "green"
-        document.getElementById("white").style.backgroundColor = "red"
+        document.getElementById("black").className = document.getElementById("black").className + " turnGreen"
+        document.getElementById("white").className = document.getElementById("white").className + " turnRed"
+        
+        document.getElementById("stopButton").style.marginLeft = "40vw";
     }
 }
 function blackDone(){
+    document.getElementById("pauseContainer").className = document.getElementById("pauseContainer").className.replace("highlight", " ");
+
     if(!paused){
         turn = "white";
         document.getElementById("confirmWhite").style.display = "inline";
         document.getElementById("confirmBlack").style.display = "none";
         blackTime = blackTime+increment;
+    }else{
+        document.getElementById("pauseContainer").className = document.getElementById("pauseContainer").className + " highlight" 
     }
 }
 function whiteDone(){
+    document.getElementById("pauseContainer").className = document.getElementById("pauseContainer").className.replace("highlight", " ");
+
     if(!paused){
         turn = "black";
         document.getElementById("confirmWhite").style.display = "none";
         document.getElementById("confirmBlack").style.display = "inline";
         whiteTime = whiteTime+increment;
+    }else{
+        document.getElementById("pauseContainer").className = document.getElementById("pauseContainer").className + " highlight" 
     }
     
 }
