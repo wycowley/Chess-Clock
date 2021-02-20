@@ -2,7 +2,7 @@
     "name": "Chess Clock",
     "short_name": "CC",
     "display": "standalone",
-    "start_url": "/",
+    "start_url": "/Chess-Clock/",
     "theme_color": "#ffffff",
     "background_color": "#f5f5f5",
     "icons": [
