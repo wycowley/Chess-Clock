@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chess Clock</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="manifest" href="/manifest.json">
+
+        <link rel="icon" href="Images/icon.png">
+        <script src="functions.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+
+    </head>
+    <body onload="">
+        <div id="complete-viewport">
+            <div class="half" id="black">
+                <h1 id="blackText" class="time"></h1>
+                
+                <button id="confirmBlack" onclick="blackDone()">
+                    <div id="blackVisual" class="rounded-corners box-shadow">
+                        <img src="Images/check.png" class="close-max-width">
+                    </div>
+                </button>
+            </div>
+            <div class="half" id="white">
+                <h1 id="whiteText" class="time"></h1>
+
+                <button id="confirmWhite" onclick="whiteDone()">
+                    <div id="whiteVisual" class="rounded-corners box-shadow">
+                        <img src="Images/check.png" class="close-max-width" style="filter: invert();">
+                    </div>
+                </button>
+            </div>
+            <div id="middleBox">
+                <button class="max-height box-shadow rounded-corners icons" onclick="pause()" id="pauseContainer" style="margin-left: 30vw">
+                    <img src="Images/pause.png" class="almost-max-width" id="pauseButton">
+                </button>
+                <button class="max-height box-shadow rounded-corners icons" onclick="stop()">
+                    <img src="Images/stop.png" class="almost-max-width">
+                
+                </button>
+
+            </div>
+        </div>
+        <div id="set-up-screen">
+            <div style="margin-top: 15vh;"><br></div>
+            <div class="full-width">
+                <h1 id="title">Chess Clock</h1>
+                <img src="Images/icon.png" id="sourceImg">
+            </div>
+            <div id="inputBoxes">
+                <h2>Time for each side</h2>
+                <h2 class="low-margin">Minutes: <input placeholder="10" id="minutesTime"></h2>
+                <h2 class="low-margin">Seconds: <input placeholder="0" id="secondsTime"></h2>
+                <br>
+                <h2>Increment (time added after each move)</h2>
+                <h2 class="low-margin">Seconds: <input placeholder="5" id="secondsIncrement"></h2>
+            </div>
+            
+            <button id="startingButton" class="rounded-corners box-shadow" onclick="start()">
+                <h1 style="text-align: center;">Start</h1>
+            </button>
+        </div>
+    </body>
+</html>

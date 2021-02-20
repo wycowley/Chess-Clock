@@ -1,0 +1,142 @@
+body{
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+h1{
+    margin: 0;
+}
+h2{
+    margin-bottom: 2%;
+}
+input{
+    height: 100%;
+    outline: black 1px;
+    width: 25vw;
+    position: relative;
+    top: -2px;
+}
+#complete-viewport{
+    display: none;
+}
+#startingButton{
+    width: 80vw;
+    margin-left: 10vw;
+    margin-top: 3vh;
+    outline: 0px;
+    border-radius: 5px;
+
+}
+.low-margin{
+    margin-bottom: 2%;
+    margin-top: 2%;
+    font-weight: lighter;
+}
+#inputBoxes{
+    width: 90vw;
+    margin-left: 5vw;
+}
+#title{
+    font-size: 65px;
+    float: left;
+    width: 45vw;
+    margin-left: 5vw;
+}
+#sourceImg{
+    width: 40vw;
+    margin: 5vw;
+    margin-bottom: 7vh;
+    margin-top: 0vh;
+}
+#blackText{
+    color: white;
+}
+#confirmBlack{
+    width: 100vw;
+    height: 30vh;
+    background-color: rgb(0,0,0,0);
+    outline: none;
+    border: none;
+    display: none;
+
+
+}
+#blackVisual{
+    width: 30vw;
+    height: 13vh;
+    margin-left: 35vw;
+    margin-top: 0vw;
+    background-color: white;
+    position: relative;
+    top: -5vh;
+}
+#confirmWhite{
+    width: 100vw;
+    height: 30vh;
+    background-color: rgb(255,255,255,0);
+    outline: none;
+    border: none;
+}
+#whiteVisual{
+    width: 30vw;
+    height: 13vh;
+    margin-left: 35vw;
+    background-color: black;
+    margin-top: 0vw;
+    position: relative;
+    top: -5vh;
+}
+.time{
+    text-align: center;
+    font-size: 10vh;
+    padding-top: 17.5vh;
+    padding-bottom: 0vh;
+}
+#complete-viewport{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+.half{
+    height:50vh;
+    width: 100vw;
+}
+#black{
+    background-color: black;
+    transform:rotate(180deg)
+
+}
+#white{
+    background-color: white;
+}
+#middleBox{
+    position: fixed;
+    top: 45vh;
+    width: 100vw;
+    height: 10vh;
+}
+
+.max-height{
+    height: 100%;
+    float: left;
+    margin-left: 5vw;
+    width: 10vh;
+
+}
+.box-shadow{
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(240,240,240);
+}
+.rounded-corners{
+    border-radius: 5%;
+}
+.almost-max-width{
+    width: 95%;
+    margin-left: 2.5%;
+}
+.close-max-width{
+    width: 90%;
+    margin-left: 5%;
+}
+.full-width{
+    width: 100vw;
+}
