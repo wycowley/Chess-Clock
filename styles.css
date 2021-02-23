@@ -57,7 +57,8 @@ button{
     background-color: rgb(0,0,0,0);
     outline: none;
     border: none;
-    height: 45vh;
+    /* height: 45vh; */
+    padding-bottom: 10vh;
     margin-top: 5vh;
 
 
@@ -65,16 +66,17 @@ button{
 #blackVisual{
     width: 30vw;
     height: 13vh;
-    margin-left: 35vw;
+    /* margin-left: 35vw; */
     margin-top: 0vw;
     background-color: white;
     position: relative;
 }
 #confirmWhite{
     margin-top: 5vh;
+    padding-bottom: 10vh;
 
     width: 100vw;
-    height: 45vh;
+    /* height: 45vh; */
     background-color: rgb(255,255,255,0);
     outline: none;
     border: none;
@@ -82,7 +84,7 @@ button{
 #whiteVisual{
     width: 30vw;
     height: 13vh;
-    margin-left: 35vw;
+    /* margin-left: 35vw; */
     background-color: black;
     margin-top: 0vw;
     position: relative;

@@ -9,6 +9,8 @@ function start(){
     paused = true;
     document.getElementById("complete-viewport").style.display = "inline";
     document.getElementById("set-up-screen").style.display = "none";
+    document.getElementById("whiteVisual").style.display = "none";
+    document.getElementById("blackVisual").style.display = "none";
 
 
     console.log(document.getElementById("minutesTime").value)
@@ -64,6 +66,12 @@ function pause(){
     else{
         paused = false;
         document.getElementById("pauseButton").src = "Images/pause.svg";
+        if(turn=="white"){
+            document.getElementById("whiteVisual").style.display = "inherit";        
+        }else{
+            document.getElementById("blackVisual").style.display = "inherit";
+
+        }
 
     }
 }
@@ -137,24 +145,24 @@ function renderTime(){
 function blackDone(){
     document.getElementById("pauseContainer").className = document.getElementById("pauseContainer").className.replace("highlight", " ");
 
-    if(!paused){
+    if(!paused && turn=="black"){
         turn = "white";
-        document.getElementById("confirmWhite").style.display = "inline";
-        document.getElementById("confirmBlack").style.display = "none";
+        document.getElementById("whiteVisual").style.display = "inherit";
+        document.getElementById("blackVisual").style.display = "none";
         blackTime = blackTime+increment;
-    }else{
+    }else if(paused){
         document.getElementById("pauseContainer").className = document.getElementById("pauseContainer").className + " highlight" 
     }
 }
 function whiteDone(){
     document.getElementById("pauseContainer").className = document.getElementById("pauseContainer").className.replace("highlight", " ");
 
-    if(!paused){
+    if(!paused && turn=="white"){
         turn = "black";
-        document.getElementById("confirmWhite").style.display = "none";
-        document.getElementById("confirmBlack").style.display = "inline";
+        document.getElementById("whiteVisual").style.display = "none";
+        document.getElementById("blackVisual").style.display = "inherit";
         whiteTime = whiteTime+increment;
-    }else{
+    }else if(paused){
         document.getElementById("pauseContainer").className = document.getElementById("pauseContainer").className + " highlight" 
     }
     
