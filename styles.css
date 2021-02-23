@@ -54,11 +54,11 @@ button{
 }
 #confirmBlack{
     width: 100vw;
-    height: 30vh;
     background-color: rgb(0,0,0,0);
     outline: none;
     border: none;
-    display: none;
+    height: 45vh;
+    margin-top: 5vh;
 
 
 }
@@ -69,11 +69,12 @@ button{
     margin-top: 0vw;
     background-color: white;
     position: relative;
-    top: -5vh;
 }
 #confirmWhite{
+    margin-top: 5vh;
+
     width: 100vw;
-    height: 30vh;
+    height: 45vh;
     background-color: rgb(255,255,255,0);
     outline: none;
     border: none;
@@ -85,12 +86,11 @@ button{
     background-color: black;
     margin-top: 0vw;
     position: relative;
-    top: -5vh;
 }
 .time{
     text-align: center;
     font-size: 10vh;
-    padding-top: 17.5vh;
+    padding-top: 12.5vh;
     padding-bottom: 0vh;
 }
 #complete-viewport{
